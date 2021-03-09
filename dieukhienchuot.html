@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        (
+            magrin: 0px;
+            padding: 0px;
+        )
+        
+    </style>
+</head>
+<body onload="init()">
+    <table>
+        <tr>
+            <input type="button" value="Trái"onclick="moveLeft();"/>
+            <input type="button" value="Phải"onclick="moveRight();"/>
+            <input type="button" value="Lên"onclick="moveUp();"/>
+            <input type="button" value="Xuống"onclick="moveDown();"/>
+        </tr>
+    </table>
+    <img style="width: 200px; height: 100px;" id="cars" src="images/right.png">
+    <script>
+        let car = null;
+        function init() {
+            car = document.getElementById('cars');
+            car.style.position = 'relative';
+            car.style.left = '0px';
+            car.style.top = '0px' ;
+        }
+        function moveRight() {
+            car.src="images/right.png";
+            car.style.width="200px";
+            car.style.height="100px";
+            if(car.style.left !== '768px'){
+            car.style.left = parseInt(car.style.left) + 10 + 'px';
+            }   
+        }
+        function moveLeft() {
+            car.src="images/left.png";
+            car.style.width="200px";
+            car.style.height="100px";
+            if(car.style.left !== '0px'){
+            car.style.left = parseInt(car.style.left) - 10 + 'px';
+            }
+        }
+        function moveUp() {
+            car.src="images/up.png";
+            car.style.width="100px";
+            car.style.height="200px";
+            if(car.style.top !== '0px'){
+                car.style.top = parseInt(car.style.top) - 10 + 'px';
+            }
+        }
+        function moveDown() {
+            car.src="images/down.png"
+            car.style.width="100px";
+            car.style.height="200px";
+             if(car.style.top !== '1000px'){
+                car.style.top = parseInt(car.style.top) + 10 + 'px';
+             }
+        }
+    </script>
+</body>
+</html>
